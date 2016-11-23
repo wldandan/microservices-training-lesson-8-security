@@ -1,0 +1,4 @@
+curl -H 'Content-type: application/json' \
+  -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0Nzk5NTYyNDIsInVzZXJfbmFtZSI6InVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiNGZjODQ0MjUtNTEyNi00Y2Q4LThlNGItY2JiMzg4OWQ2ZGQxIiwiY2xpZW50X2lkIjoiYWNtZSIsInNjb3BlIjpbIm9wZW5pZCJdfQ.DPGPP1YXqOJb4jFNw5IPH8jwsKqLiPW2Ah55Rjd58dghDwOpHE1ZexDQb4l7P6jceEHjToUTlRugf1FLDSCfWGk9yBpnV7IFeKb6Exlv8r8uQBOk6ywxL8KCiv-PhFFdUZxRozo3anwR-sCFidsZRLFrbBsu8gFitPNnOncbmCSj-qOzybu5HubkbO2HhmNxMqKA3G5WVp-3YTykYopqDmyiHErDafI0kZ09C_NIHQK972DH5a8wJudP-JEp_kUGjkdNMucnf5WujjteOGFH4xkVf6rpW6Bdi7rky4O0S6x-1fGQx4O_vMo3WTikLXjkdM6uLZKAxrcTgwrpc7rKdg' \
+  -X POST http://localhost:9040/enroll/ \
+  -d '{"name": "Tom", "phone": "13201234567", "eventId": "1"}' -v

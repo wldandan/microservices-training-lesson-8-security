@@ -1,0 +1,21 @@
+version: '2'
+services:
+  authserver:
+    build: ../authserver
+    ports:
+      - "8443:443"
+  redis:
+    image: redis
+  notification-service:
+    build: ../notification-service
+    command: java -jar notification-service-latest.jar --server.port=80 --custom.redis.host=redis
+    ports:
+      - "8081:80"
+    depends_on:
+      - redis
+  enroll-service:
+    build: .
+    ports:
+      - "8080:80"
+    links:
+      - redis

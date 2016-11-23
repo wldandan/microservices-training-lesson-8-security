@@ -1,0 +1,7 @@
+version: '2'
+services:
+  auth-server:
+    build: auth-server
+    command: java -jar authserver.jar --server.port=443
+    ports:
+      - "443:443"
