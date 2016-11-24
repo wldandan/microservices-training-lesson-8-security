@@ -1,0 +1,13 @@
+server:
+  contextPath: /uaa
+  port: 8050
+
+security:
+  user:
+    password: password
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+
+eureka:
+  client: 
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/

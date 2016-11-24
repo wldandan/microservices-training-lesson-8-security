@@ -1,0 +1,12 @@
+version: '2'
+services:
+  authserver:
+    build: ../authserver
+    ports:
+      - "8443:443"
+  enroll-service:
+    build: .
+    ports:
+      - "8080:80"
+    links:
+      - redis

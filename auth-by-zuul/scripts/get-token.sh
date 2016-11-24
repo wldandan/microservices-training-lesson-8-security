@@ -1,0 +1,1 @@
+curl --insecure -H "Authorization: Basic $(echo -n 'acme:acmesecret' | base64)" http://localhost:8050/uaa/oauth/token -d grant_type=password -d username=user -d password=password -v
