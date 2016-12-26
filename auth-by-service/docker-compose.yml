@@ -1,12 +1,14 @@
 version: '2'
 services:
   authserver:
-    build: ../authserver
+    build: ./authserver
     ports:
       - "8443:443"
   enroll-service:
-    build: .
+    build: ./enroll-service
     ports:
       - "8080:80"
     links:
       - redis
+  redis:
+    image: redis:alpine    
