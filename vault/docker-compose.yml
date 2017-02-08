@@ -1,0 +1,17 @@
+version: "2"
+services:
+  vault:
+    image: vault:0.6.4
+    volumes:
+        - vault-volume:/vault/file
+    environment: 
+        VAULT_LOCAL_CONFIG:  '{"backend": {"file": {"path": "/vault/file"}}, "default_lease_ttl": "168h", "max_lease_ttl": "720h", "listener": {"tcp": {"address": "0.0.0.0:8200", "tls_disable": "1"}}, "disable_mlock": true}'
+    command: "server"
+    cap_add: 
+      - IPC_LOCK  #--cap-add: Add Linux capabilities,  in order for Vault to lock memory
+    ports:
+        - 8200:8200
+volumes:
+   vault-volume:
+      external: true    
+        
